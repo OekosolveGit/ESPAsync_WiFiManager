@@ -729,6 +729,11 @@ class ESPAsync_WiFiManager
     }
  
     ///////////////////////////
+
+   bool getStopConfigPortal()
+   {
+     return stopConfigPortal;
+   }
      
     // For configuring CORS Header, default to WM_HTTP_CORS_ALLOW_ALL = "*"
 #if USING_CORS_FEATURE
