@@ -589,6 +589,7 @@ class ESPAsync_WiFiManager
 
     void          resetSettings();
 
+    int           connectWifi(const String& ssid = "", const String& pass = "");
     //sets timeout before webserver loop ends and exits even if there has been no setup.
     //usefully for devices that failed to connect at some point and got stuck in a webserver loop
     //in seconds setConfigPortalTimeout is a new name for setTimeout
@@ -956,7 +957,6 @@ class ESPAsync_WiFiManager
 
     void          setWifiStaticIP();   
     int           reconnectWifi();    
-    int           connectWifi(const String& ssid = "", const String& pass = "");
     
     wl_status_t   waitForConnectResult();
     
