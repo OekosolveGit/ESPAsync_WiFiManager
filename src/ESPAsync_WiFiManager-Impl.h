@@ -2265,7 +2265,7 @@ void ESPAsync_WiFiManager::handleNotFound(AsyncWebServerRequest *request)
   message += "URI: ";
   message += request->url();
   message += "\nMethod: ";
-  message += (request->method() == HTTP_GET) ? "GET" : "POST";
+  message += (request->method() == HTTP_ASYNC_GET) ? "GET" : "POST";
   message += "\nArguments: ";
   message += request->args();
   message += "\n";

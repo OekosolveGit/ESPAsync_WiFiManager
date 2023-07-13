@@ -908,7 +908,7 @@ void setup()
 
   server.addHandler(&events);
 
-  server.on("/heap", HTTP_GET, [](AsyncWebServerRequest * request)
+  server.on("/heap", HTTP_ASNYC_GET, [](AsyncWebServerRequest * request)
   {
     request->send(200, "text/plain", String(ESP.getFreeHeap()));
   });
@@ -924,19 +924,19 @@ void setup()
   {
     Serial.print(F("NOT_FOUND: "));
 
-    if (request->method() == HTTP_GET)
+    if (request->method() == HTTP_ASYNC_GET)
       Serial.print(F("GET"));
-    else if (request->method() == HTTP_POST)
+    else if (request->method() == HTTP_ASYNC_POST)
       Serial.print(F("POST"));
-    else if (request->method() == HTTP_DELETE)
+    else if (request->method() == HTTP_ASYNC_DELETE)
       Serial.print(F("DELETE"));
-    else if (request->method() == HTTP_PUT)
+    else if (request->method() == HTTP_ASYNC_PUT)
       Serial.print(F("PUT"));
-    else if (request->method() == HTTP_PATCH)
+    else if (request->method() == HTTP_ASYNC_PATCH)
       Serial.print(F("PATCH"));
-    else if (request->method() == HTTP_HEAD)
+    else if (request->method() == HTTP_ASYNC_HEAD)
       Serial.print(F("HEAD"));
-    else if (request->method() == HTTP_OPTIONS)
+    else if (request->method() == HTTP_ASYNC_OPTIONS)
       Serial.print(F("OPTIONS"));
     else
       Serial.print(F("UNKNOWN"));
